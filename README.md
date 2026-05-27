@@ -78,6 +78,10 @@ const EVENT_DETAILS = {
 
 The Maps button and calendar download will stay disabled until `mapUrl`, `startsAt`, and `endsAt` are filled in.
 
+## Gift transfer details
+
+The gift section currently contains placeholders. Replace the bank name, account number, and account holder text in `index.html` when Mariska and Kevin confirm the transfer details.
+
 ## Host on GitHub Pages
 
 1. Create a GitHub repository.

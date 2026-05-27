@@ -27,7 +27,7 @@ body {
       rgba(0,0,0,0.35),
       rgba(0,0,0,0.45)
     ),
-    url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1400&auto=format&fit=crop');
+    url('assets/images/hero-watercolor-lake.png');
 
   background-size: cover;
   background-position: center;
@@ -271,6 +271,7 @@ button:disabled {
 
 .story-section h2,
 .event-section h2,
+.gift-section h2,
 .rsvp-section h2 {
 
   font-family: 'Cormorant Garamond', serif;
@@ -425,6 +426,95 @@ button:disabled {
   cursor: not-allowed;
 
   opacity: 0.55;
+}
+
+/* GIFT SECTION */
+
+.gift-section {
+
+  min-height: 90vh;
+
+  background: #F8F3ED;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 80px 30px;
+
+  text-align: center;
+}
+
+.gift-content {
+
+  width: 100%;
+  max-width: 760px;
+
+  color: #3A312C;
+}
+
+.gift-copy {
+
+  max-width: 620px;
+
+  margin: 0 auto 34px;
+
+  color: #5B524C;
+
+  line-height: 1.8;
+}
+
+.gift-grid {
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gift-card {
+
+  border: 1px solid rgba(58,49,44,0.12);
+
+  border-radius: 8px;
+
+  background: rgba(255,255,255,0.58);
+
+  padding: 24px 20px;
+
+  text-align: left;
+}
+
+.gift-card span {
+
+  display: block;
+
+  color: #A3B18A;
+
+  font-size: 0.78rem;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 12px;
+}
+
+.gift-card strong {
+
+  display: block;
+
+  color: #3A312C;
+
+  font-size: 1.05rem;
+
+  margin-bottom: 10px;
+}
+
+.gift-card p {
+
+  color: #5B524C;
+
+  line-height: 1.7;
 }
 
 /* RSVP SECTION */
@@ -668,8 +758,14 @@ button:disabled {
 
   .story-section h2,
   .event-section h2,
+  .gift-section h2,
   .rsvp-section h2 {
     font-size: 2.6rem;
+  }
+
+  .gift-grid,
+  .event-actions {
+    grid-template-columns: 1fr;
   }
 
 }

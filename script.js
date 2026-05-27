@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const EVENT_DETAILS = {
     title: "Mariska & Kevin Church Blessing",
     dateText: "Saturday, 17 July 2027",
-    timeText: "12:00 PM",
-    venue: "Saint Peter Cathedral Bandung",
-    address: "Jl. Merdeka No.14, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117, Indonesia",
-    startsAt: "2027-07-17T12:00:00+07:00",
-    endsAt: "2027-07-17T13:30:00+07:00",
+    timeText: "10:00 AM - 11:30 AM",
+    venue: "Gereja Mahasiswa Bandung",
+    address: "Jln Sultan Agung No.4, Bandung, Indonesia",
+    startsAt: "2027-07-17T10:00:00+07:00",
+    endsAt: "2027-07-17T11:30:00+07:00",
     timeZone: "Asia/Jakarta",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Saint%20Peter%20Cathedral%20Bandung"
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Gereja%20Mahasiswa%20Bandung%20Jln%20Sultan%20Agung%20No.4"
   };
 
   if ("scrollRestoration" in window.history) {
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `DTEND;TZID=${EVENT_DETAILS.timeZone}:${formatCalendarWallTime(EVENT_DETAILS.endsAt)}`,
       `SUMMARY:${EVENT_DETAILS.title}`,
       `LOCATION:${EVENT_DETAILS.venue}, ${EVENT_DETAILS.address}`,
-      "DESCRIPTION:Church blessing begins at 12:00 PM Bandung time (WIB).",
+      "DESCRIPTION:Church blessing begins at 10:00 AM Bandung time (WIB).",
       "END:VEVENT",
       "END:VCALENDAR"
     ].join("\r\n");
