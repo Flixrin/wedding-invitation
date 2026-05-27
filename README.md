@@ -12,7 +12,7 @@ Keep the guest list in Excel with these columns:
 - `name`
 - `max_guests`
 
-You can start from `guest-list-template.csv`, open it in Excel, edit it, then save/export it as CSV.
+You can start from `guest-list-template.csv`, open it in Excel, edit it, then save/export it as CSV. If `guest_key` is blank, the converter generates a random-looking invitation code for that guest.
 
 Generate the website guest database:
 
@@ -32,6 +32,8 @@ This creates:
 - `guest-links.csv`, used by you to copy each personalized invite link back into Excel.
 
 Important: GitHub Pages and other static hosts are public. Do not put private details such as phone numbers, addresses, or email addresses in `guests.json`; keep only display names and maximum guest counts.
+
+If a visitor opens the site without a valid `guest` code, the RSVP form is hidden and no submission is allowed.
 
 Guest links use the `guest` query parameter, for example:
 

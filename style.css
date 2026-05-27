@@ -444,12 +444,20 @@ button:disabled {
   text-align: center;
 }
 
-.rsvp-card {
+.rsvp-card,
+.invalid-invite-card {
 
   width: 100%;
   max-width: 520px;
 
   color: #3A312C;
+}
+
+.invalid-invite-card p {
+
+  color: #5B524C;
+
+  line-height: 1.8;
 }
 
 .rsvp-copy {

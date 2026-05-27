@@ -10,6 +10,9 @@ const baseUrlArg =
 const baseUrl =
   baseUrlArg ? baseUrlArg.replace("--base=", "").replace(/\/?$/, "/") : "";
 
+const usedKeys =
+  new Set();
+
 function parseCsv(text) {
   const rows = [];
   let row = [];
@@ -63,6 +66,29 @@ function normalizeKey(value) {
     .replace(/^-+|-+$/g, "");
 }
 
+function createGuestKey(name) {
+  const normalized =
+    normalizeKey(name).slice(0, 12) || "guest";
+
+  let suffix =
+    Math.random().toString(36).slice(2, 8);
+
+  let key =
+    `${normalized}-${suffix}`;
+
+  while (usedKeys.has(key)) {
+    suffix =
+      Math.random().toString(36).slice(2, 8);
+
+    key =
+      `${normalized}-${suffix}`;
+  }
+
+  usedKeys.add(key);
+
+  return key;
+}
+
 const csv =
   fs.readFileSync(inputPath, "utf8");
 
@@ -84,7 +110,11 @@ for (const row of rows) {
   }
 
   const key =
-    normalizeKey(row[headerIndex.guest_key] || name);
+    row[headerIndex.guest_key]
+      ? normalizeKey(row[headerIndex.guest_key])
+      : createGuestKey(name);
+
+  usedKeys.add(key);
 
   const maxGuests =
     Number.parseInt(row[headerIndex.max_guests], 10) || 1;

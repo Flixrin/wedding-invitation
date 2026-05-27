@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const rsvpForm =
     document.getElementById("rsvpForm");
 
+  const invalidInviteCard =
+    document.getElementById("invalidInviteCard");
+
   const guestSelect =
     document.getElementById("guestSelect");
 
@@ -54,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentGuestKey = "guest";
   let currentGuestName = "Guest";
   let invitationOpened = false;
+  let isValidGuest = false;
   window.invitationOpened = false;
 
   button.disabled = true;
@@ -234,6 +238,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+  function showInvalidInvite() {
+
+    isValidGuest = false;
+
+    guestName.innerText =
+      "Invitation link not recognized";
+
+    rsvpForm.hidden = true;
+    invalidInviteCard.hidden = false;
+  }
+
+  function showValidInvite() {
+
+    isValidGuest = true;
+
+    rsvpForm.hidden = false;
+    invalidInviteCard.hidden = true;
+  }
+
   function fetchJsonp(url) {
 
     return new Promise((resolve, reject) => {
@@ -362,6 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentGuestKey = guestKey;
         currentGuestName = guestData.name;
+        showValidInvite();
 
         guestName.innerText =
           `Dear ${guestData.name}`;
@@ -374,24 +398,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       } else {
 
-        guestName.innerText =
-          "Dear Guest";
-
-        guestKeyInput.value = currentGuestKey;
-        guestDisplayNameInput.value = currentGuestName;
-        await loadExistingRsvp();
+        showInvalidInvite();
       }
 
     } catch (error) {
 
       console.log("Guest list unavailable:", error);
 
-      guestName.innerText =
-        "Dear Guest";
-
-      guestKeyInput.value = currentGuestKey;
-      guestDisplayNameInput.value = currentGuestName;
-      await loadExistingRsvp();
+      showInvalidInvite();
     } finally {
 
       button.disabled = false;
@@ -490,6 +504,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const selectedGuests =
       guestSelect.value;
+
+    if (!isValidGuest) {
+
+      rsvpMessage.innerText =
+        "This invitation link is not recognized. Please contact the host.";
+
+      return;
+    }
 
     const attendanceStatus =
       getAttendanceStatus();
