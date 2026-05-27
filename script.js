@@ -245,6 +245,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     isValidGuest = false;
 
+    document.body.classList.add("invalid-invite");
+
     guestName.innerText =
       "Invitation link not recognized";
 
@@ -262,6 +264,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function showValidInvite() {
 
     isValidGuest = true;
+
+    document.body.classList.remove("invalid-invite");
 
     coupleName.hidden = false;
     heroTagline.innerText =

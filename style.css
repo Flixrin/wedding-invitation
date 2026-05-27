@@ -723,3 +723,10 @@ button:disabled {
 
   transform: translateY(0);
 }
+
+.invalid-invite #coupleName,
+.invalid-invite #openBtn,
+.invalid-invite #scrollIndicator {
+
+  display: none;
+}
