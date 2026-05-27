@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const button = document.getElementById("openBtn");
   const guestName = document.getElementById("guestName");
+  const coupleName = document.getElementById("coupleName");
+  const heroTagline = document.getElementById("heroTagline");
+  const scrollIndicator = document.getElementById("scrollIndicator");
 
   const music = document.getElementById("bgMusic");
 
@@ -245,6 +248,13 @@ document.addEventListener("DOMContentLoaded", () => {
     guestName.innerText =
       "Invitation link not recognized";
 
+    coupleName.hidden = true;
+    heroTagline.innerText =
+      "Please contact the host for the correct invitation link.";
+
+    button.hidden = true;
+    scrollIndicator.hidden = true;
+
     rsvpForm.hidden = true;
     invalidInviteCard.hidden = false;
   }
@@ -252,6 +262,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function showValidInvite() {
 
     isValidGuest = true;
+
+    coupleName.hidden = false;
+    heroTagline.innerText =
+      "Together with love, family, and cherished friends";
+
+    button.hidden = false;
+    scrollIndicator.hidden = false;
 
     rsvpForm.hidden = false;
     invalidInviteCard.hidden = true;
@@ -437,6 +454,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================= */
 
   button.addEventListener("click", () => {
+
+    if (!isValidGuest) {
+
+      return;
+    }
 
     invitationOpened = true;
     window.invitationOpened = true;
