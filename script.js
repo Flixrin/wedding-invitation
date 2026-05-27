@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     address: "Jl. Merdeka No.14, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40117, Indonesia",
     startsAt: "2027-07-17T12:00:00+07:00",
     endsAt: "2027-07-17T13:30:00+07:00",
+    timeZone: "Asia/Jakarta",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Saint%20Peter%20Cathedral%20Bandung"
   };
 
@@ -92,7 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
       !EVENT_DETAILS.startsAt || !EVENT_DETAILS.endsAt;
   }
 
-  function formatCalendarDate(value) {
+  function formatCalendarWallTime(value) {
+
+    return value
+      .slice(0, 19)
+      .replace(/[-:]/g, "");
+  }
+
+  function formatCalendarTimestamp(value) {
 
     return new Date(value)
       .toISOString()
@@ -111,13 +119,23 @@ document.addEventListener("DOMContentLoaded", () => {
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
       "PRODID:-//Mariska Kevin Invitation//EN",
+      "BEGIN:VTIMEZONE",
+      `TZID:${EVENT_DETAILS.timeZone}`,
+      "BEGIN:STANDARD",
+      "TZOFFSETFROM:+0700",
+      "TZOFFSETTO:+0700",
+      "TZNAME:WIB",
+      "DTSTART:19700101T000000",
+      "END:STANDARD",
+      "END:VTIMEZONE",
       "BEGIN:VEVENT",
       `UID:${Date.now()}@mariska-kevin-invitation`,
-      `DTSTAMP:${formatCalendarDate(new Date().toISOString())}`,
-      `DTSTART:${formatCalendarDate(EVENT_DETAILS.startsAt)}`,
-      `DTEND:${formatCalendarDate(EVENT_DETAILS.endsAt)}`,
+      `DTSTAMP:${formatCalendarTimestamp(new Date().toISOString())}`,
+      `DTSTART;TZID=${EVENT_DETAILS.timeZone}:${formatCalendarWallTime(EVENT_DETAILS.startsAt)}`,
+      `DTEND;TZID=${EVENT_DETAILS.timeZone}:${formatCalendarWallTime(EVENT_DETAILS.endsAt)}`,
       `SUMMARY:${EVENT_DETAILS.title}`,
       `LOCATION:${EVENT_DETAILS.venue}, ${EVENT_DETAILS.address}`,
+      "DESCRIPTION:Church blessing begins at 12:00 PM Bandung time (WIB).",
       "END:VEVENT",
       "END:VCALENDAR"
     ].join("\r\n");
