@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Prevent search engine indexing -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Mariska & Kevin</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Floating Leaves -->
+    <div class="leaves">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="glass-card">
+
+            <p class="guest-text" id="guestName">
+                Dear Guest
+            </p>
+
+            <h1>
+                Mariska
+                <span>&</span>
+                Kevin
+            </h1>
+
+            <p class="tagline">
+                Together with love, family,
+                and cherished friends
+            </p>
+
+            <button id="openBtn">
+                Open Invitation
+            </button>
+
+            <div class="scroll-indicator">
+                Scroll Down
+            </div>
+        </div>
+
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="story-section hidden-section">
+
+        <div class="story-content">
+
+            <p class="section-label">
+                OUR STORY
+            </p>
+
+            <h2>
+                Two hearts,<br>
+                one beautiful journey.
+            </h2>
+
+            <p class="story-text">
+                Together with warmth, laughter,
+                and cherished memories,
+                we invite you to celebrate
+                the beginning of our forever.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- EVENT SECTION -->
+    <section class="event-section hidden-section">
+
+        <div class="event-card">
+
+            <p class="section-label">
+                WEDDING DAY
+            </p>
+
+            <h2>
+                Church Blessing
+            </h2>
+
+            <div class="event-details">
+                <p>
+                    <span>Date</span>
+                    <strong id="eventDateText">To Be Announced</strong>
+                </p>
+
+                <p>
+                    <span>Time</span>
+                    <strong id="eventTimeText">To Be Announced</strong>
+                </p>
+
+                <p>
+                    <span>Venue</span>
+                    <strong id="eventVenueText">Church Blessing Venue</strong>
+                </p>
+
+                <p>
+                    <span>Address</span>
+                    <strong id="eventAddressText">To Be Announced</strong>
+                </p>
+            </div>
+
+            <div class="event-actions">
+                <a class="event-button" id="mapBtn" href="#" target="_blank" rel="noopener">
+                    Open Map
+                </a>
+
+                <button type="button" class="event-button" id="calendarBtn">
+                    Add to Calendar
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RSVP SECTION -->
+    <section class="rsvp-section hidden-section">
+
+        <form class="rsvp-card" id="rsvpForm">
+
+            <p class="section-label">
+                RSVP
+            </p>
+
+            <h2>
+                Will you be joining us?
+            </h2>
+
+            <p class="rsvp-copy">
+                Please let us know how many guests will attend.
+            </p>
+
+            <input type="hidden" id="guestKey" name="guestKey">
+            <input type="hidden" id="guestDisplayName" name="guestName">
+
+            <fieldset class="rsvp-choice-group" id="attendanceGroup">
+                <legend>
+                    Your response
+                </legend>
+
+                <label class="rsvp-choice">
+                    <input type="radio" name="attendanceStatus" value="attending">
+                    <span>I will attend</span>
+                </label>
+
+                <label class="rsvp-choice">
+                    <input type="radio" name="attendanceStatus" value="unable">
+                    <span>Unable to attend</span>
+                </label>
+            </fieldset>
+
+            <div id="guestCountGroup" class="guest-count-group" hidden>
+                <label for="guestSelect">
+                    Number of guests
+                </label>
+
+                <select id="guestSelect" name="guestCount">
+                    <option value="">Select Number of Guests</option>
+                </select>
+            </div>
+
+            <label for="guestNotes">
+                Notes
+            </label>
+
+            <textarea id="guestNotes" name="notes" rows="3" placeholder="Dietary requests or a short message"></textarea>
+
+            <button type="submit" id="rsvpBtn">
+                Submit RSVP
+            </button>
+
+            <p class="rsvp-message" id="rsvpMessage" role="status"></p>
+
+        </form>
+
+    </section>
+
+    <audio id="bgMusic" loop>
+        <source src="assets/music/theme.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
