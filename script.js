@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyCVouSyNva17C_ca16nx2rJp3FQBM64LQSgGpMhrbLoZIZ2MXCNbhbFk6V_IUPlcdH/exec";
 
   const EVENT_DETAILS = {
-    title: "Mariska & Kevin Church Blessing",
+    title: "Kevin & Mariska Church Blessing",
     dateText: "Saturday, 17 July 2027",
     timeText: "10:00 AM - 11:30 AM",
     venue: "Gereja Mahasiswa Bandung",
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const calendarContent = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//Mariska Kevin Invitation//EN",
+      "PRODID:-//Kevin Mariska Invitation//EN",
       "BEGIN:VTIMEZONE",
       `TZID:${EVENT_DETAILS.timeZone}`,
       "BEGIN:STANDARD",
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "END:STANDARD",
       "END:VTIMEZONE",
       "BEGIN:VEVENT",
-      `UID:${Date.now()}@mariska-kevin-invitation`,
+      `UID:${Date.now()}@kevin-mariska-invitation`,
       `DTSTAMP:${formatCalendarTimestamp(new Date().toISOString())}`,
       `DTSTART;TZID=${EVENT_DETAILS.timeZone}:${formatCalendarWallTime(EVENT_DETAILS.startsAt)}`,
       `DTEND;TZID=${EVENT_DETAILS.timeZone}:${formatCalendarWallTime(EVENT_DETAILS.endsAt)}`,
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       URL.createObjectURL(new Blob([calendarContent], { type: "text/calendar" }));
 
     link.download =
-      "mariska-kevin-church-blessing.ics";
+      "kevin-mariska-church-blessing.ics";
 
     link.click();
 
