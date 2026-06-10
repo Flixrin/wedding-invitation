@@ -1,6 +1,6 @@
 # Invitation
 
-Static church blessing invitation for Mariska & Kevin with guest-specific RSVP links.
+Static church blessing invitation for Kevin & Mariska with guest-specific RSVP links.
 
 This is suitable for GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any static website host.
 
@@ -65,7 +65,7 @@ Update the `EVENT_DETAILS` block near the top of `script.js` when the church ble
 
 ```js
 const EVENT_DETAILS = {
-  title: "Mariska & Kevin Church Blessing",
+  title: "Kevin & Mariska Church Blessing",
   dateText: "Saturday, 1 January 2027",
   timeText: "10:00 AM",
   venue: "Church Name",
@@ -80,7 +80,7 @@ The Maps button and calendar download will stay disabled until `mapUrl`, `starts
 
 ## Gift transfer details
 
-The gift section currently contains placeholders. Replace the bank name, account number, and account holder text in `index.html` when Mariska and Kevin confirm the transfer details.
+The gift section currently contains placeholders. Replace the bank name, account number, and account holder text in `index.html` when Kevin and Mariska confirm the transfer details.
 
 ## Host on GitHub Pages
 
