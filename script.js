@@ -100,6 +100,75 @@ document.addEventListener("DOMContentLoaded", () => {
       !EVENT_DETAILS.startsAt || !EVENT_DETAILS.endsAt;
   }
 
+  function updateEventCountdown() {
+
+    const countdownDays =
+      document.getElementById("countdownDays");
+
+    const countdownHours =
+      document.getElementById("countdownHours");
+
+    const countdownMinutes =
+      document.getElementById("countdownMinutes");
+
+    const countdownMessage =
+      document.getElementById("countdownMessage");
+
+    const eventStart =
+      new Date(EVENT_DETAILS.startsAt).getTime();
+
+    const eventEnd =
+      new Date(EVENT_DETAILS.endsAt).getTime();
+
+    const now =
+      Date.now();
+
+    if (!Number.isFinite(eventStart)) {
+
+      document.getElementById("eventCountdown").hidden = true;
+      countdownMessage.innerText = "";
+
+      return;
+    }
+
+    if (now >= eventStart) {
+
+      countdownDays.innerText = "000";
+      countdownHours.innerText = "00";
+      countdownMinutes.innerText = "00";
+      countdownMessage.innerText =
+        now <= eventEnd
+          ? "Today is the day. The church blessing is underway."
+          : "Thank you for celebrating this special day with us.";
+
+      return;
+    }
+
+    const totalMinutes =
+      Math.floor((eventStart - now) / 60000);
+
+    const days =
+      Math.floor(totalMinutes / 1440);
+
+    const hours =
+      Math.floor((totalMinutes % 1440) / 60);
+
+    const minutes =
+      totalMinutes % 60;
+
+    countdownDays.innerText =
+      String(days).padStart(3, "0");
+
+    countdownHours.innerText =
+      String(hours).padStart(2, "0");
+
+    countdownMinutes.innerText =
+      String(minutes).padStart(2, "0");
+
+    countdownMessage.innerText =
+      "Until we celebrate together in Bandung";
+  }
+
   function formatCalendarWallTime(value) {
 
     return value
@@ -162,6 +231,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   applyEventDetails();
+  updateEventCountdown();
+
+  window.setInterval(updateEventCountdown, 60000);
 
   document
     .getElementById("calendarBtn")

@@ -619,6 +619,62 @@ button:disabled {
   line-height: 2;
 }
 
+.event-countdown {
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.countdown-unit {
+
+  min-width: 0;
+
+  padding: 16px 8px 14px;
+
+  border: 1px solid rgba(255,220,228,0.24);
+  border-radius: 8px;
+
+  background: rgba(255,238,241,0.12);
+}
+
+.countdown-unit strong {
+
+  display: block;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.15rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.countdown-unit span {
+
+  display: block;
+
+  margin-top: 7px;
+
+  color: rgba(255,255,255,0.76);
+
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.countdown-message {
+
+  min-height: 24px;
+
+  margin-top: 12px;
+
+  color: rgba(255,255,255,0.86);
+
+  font-size: 0.78rem;
+}
+
 .event-details {
 
   display: grid;
@@ -1171,6 +1227,23 @@ button:disabled {
   .gift-grid,
   .event-actions {
     grid-template-columns: 1fr;
+  }
+
+  .event-countdown {
+    gap: 7px;
+  }
+
+  .countdown-unit {
+    padding: 14px 4px 12px;
+  }
+
+  .countdown-unit strong {
+    font-size: 1.8rem;
+  }
+
+  .countdown-unit span {
+    font-size: 0.58rem;
+    letter-spacing: 1px;
   }
 
   .photo-section {

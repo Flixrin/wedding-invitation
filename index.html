@@ -17,7 +17,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=20260610-sakura">
+  <link rel="stylesheet" href="style.css?v=20260610-countdown">
 
 </head>
 
@@ -189,6 +189,25 @@
                 Church Blessing
             </h2>
 
+            <div class="event-countdown" id="eventCountdown" aria-label="Countdown to the church blessing">
+                <div class="countdown-unit">
+                    <strong id="countdownDays">000</strong>
+                    <span>Days</span>
+                </div>
+
+                <div class="countdown-unit">
+                    <strong id="countdownHours">00</strong>
+                    <span>Hours</span>
+                </div>
+
+                <div class="countdown-unit">
+                    <strong id="countdownMinutes">00</strong>
+                    <span>Minutes</span>
+                </div>
+            </div>
+
+            <p class="countdown-message" id="countdownMessage" aria-live="polite"></p>
+
             <div class="event-details">
                 <p>
                     <span>Date</span>
@@ -346,7 +365,7 @@
         <source src="assets/music/theme.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="script.js?v=20260610-gallery"></script>
+    <script src="script.js?v=20260610-countdown"></script>
 
 </body>
 
