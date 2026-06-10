@@ -82,6 +82,10 @@ The Maps button and calendar download will stay disabled until `mapUrl`, `starts
 
 The gift section currently contains placeholders. Replace the bank name, account number, and account holder text in `index.html` when Kevin and Mariska confirm the transfer details.
 
+## Photo gallery
+
+Temporary gallery images are stored in `assets/images/gallery`. Replace the files while keeping the same filenames to update the three couple carousel images, Kevin and Mariska portraits, and both family photos. The couple carousel advances every 3.5 seconds.
+
 ## Host on GitHub Pages
 
 1. Create a GitHub repository.

@@ -167,6 +167,91 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("calendarBtn")
     .addEventListener("click", downloadCalendarInvite);
 
+  /* =========================
+     Couple Photo Carousel
+  ========================= */
+
+  const carousel =
+    document.getElementById("coupleCarousel");
+
+  const carouselSlides =
+    Array.from(carousel.querySelectorAll(".carousel-slide"));
+
+  const carouselDots =
+    Array.from(carousel.querySelectorAll(".carousel-dot"));
+
+  const carouselPrevious =
+    carousel.querySelector(".carousel-previous");
+
+  const carouselNext =
+    carousel.querySelector(".carousel-next");
+
+  let activeCarouselSlide = 0;
+  let carouselTimer;
+
+  function showCarouselSlide(index) {
+
+    activeCarouselSlide =
+      (index + carouselSlides.length) % carouselSlides.length;
+
+    carouselSlides.forEach((slide, slideIndex) => {
+
+      const isActive =
+        slideIndex === activeCarouselSlide;
+
+      slide.classList.toggle("is-active", isActive);
+      carouselDots[slideIndex].classList.toggle("is-active", isActive);
+      carouselDots[slideIndex].setAttribute(
+        "aria-current",
+        isActive ? "true" : "false"
+      );
+    });
+  }
+
+  function startCarousel() {
+
+    window.clearInterval(carouselTimer);
+
+    carouselTimer = window.setInterval(() => {
+
+      showCarouselSlide(activeCarouselSlide + 1);
+
+    }, 3500);
+  }
+
+  carouselPrevious.addEventListener("click", () => {
+
+    showCarouselSlide(activeCarouselSlide - 1);
+    startCarousel();
+  });
+
+  carouselNext.addEventListener("click", () => {
+
+    showCarouselSlide(activeCarouselSlide + 1);
+    startCarousel();
+  });
+
+  carouselDots.forEach((dot, index) => {
+
+    dot.addEventListener("click", () => {
+
+      showCarouselSlide(index);
+      startCarousel();
+    });
+  });
+
+  carousel.addEventListener("mouseenter", () => {
+    window.clearInterval(carouselTimer);
+  });
+
+  carousel.addEventListener("mouseleave", startCarousel);
+  carousel.addEventListener("focusin", () => {
+    window.clearInterval(carouselTimer);
+  });
+  carousel.addEventListener("focusout", startCarousel);
+
+  startCarousel();
+
   function showGuestCountError() {
 
     guestSelect.classList.add("field-error");
