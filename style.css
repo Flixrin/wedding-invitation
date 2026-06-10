@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --peach-mist: #FFF0E8;
+  --peach-soft: #FAD8CB;
+  --blush-mist: #FCE8EC;
+  --blush: #F4C8D2;
+  --rose: #C96F83;
+  --rose-dark: #9E5266;
+  --plum: #51383F;
+  --muted-plum: #765D63;
+  --warm-white: #FFFBF9;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -24,8 +36,8 @@ body {
 
   background:
     linear-gradient(
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.45)
+      rgba(87,48,58,0.22),
+      rgba(98,52,64,0.38)
     ),
     url('assets/images/hero-watercolor-lake.png');
 
@@ -54,7 +66,7 @@ body {
 
   border-radius: 28px;
 
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,241,239,0.18);
 
   backdrop-filter: blur(14px);
 
@@ -96,7 +108,7 @@ h1 {
 }
 
 h1 span {
-  color: #E8A87C;
+  color: #F4B6C2;
 }
 
 .tagline {
@@ -116,8 +128,8 @@ button {
 
   background: linear-gradient(
     135deg,
-    #D97742,
-    #E8A87C
+    var(--rose-dark),
+    var(--rose)
   );
 
   color: white;
@@ -151,90 +163,134 @@ button:disabled {
   box-shadow: none;
 }
 
-/* LEAVES */
+/* FALLING SAKURA */
 
-.leaves span {
+.sakura {
 
   position: fixed;
 
+  inset: 0;
+
+  z-index: 3;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.sakura span {
+
+  position: absolute;
+
   top: -10%;
 
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #C56A82 0 2px,
+      transparent 3px
+    );
+
+  opacity: 0;
+
+  animation: fallSakura linear infinite;
+}
+
+.sakura span::before,
+.sakura span::after {
+
+  content: "";
+
+  position: absolute;
+  left: 1px;
+  top: 6px;
+
+  width: 20px;
+  height: 10px;
+
+  border-radius: 75% 25% 75% 25%;
 
   background: linear-gradient(
     135deg,
-    #A3B18A,
-    #DDE5D0
+    #FFF2F5,
+    #F3AFC0
   );
 
-  border-radius: 0 100% 0 100%;
-
-  opacity: 0.75;
-
-  animation: floatLeaf linear infinite;
-
-  z-index: 1;
+  box-shadow: 0 1px 3px rgba(126,62,80,0.16);
 }
 
-.leaves span:nth-child(1) {
+.sakura span::after {
+  transform: rotate(90deg);
+}
+
+.sakura span:nth-child(1) {
   left: 10%;
   animation-duration: 14s;
   animation-delay: 0s;
 }
 
-.leaves span:nth-child(2) {
+.sakura span:nth-child(2) {
   left: 20%;
   animation-duration: 18s;
   animation-delay: 2s;
+  scale: 0.72;
 }
 
-.leaves span:nth-child(3) {
+.sakura span:nth-child(3) {
   left: 35%;
   animation-duration: 16s;
   animation-delay: 4s;
+  scale: 1.12;
 }
 
-.leaves span:nth-child(4) {
+.sakura span:nth-child(4) {
   left: 50%;
   animation-duration: 20s;
   animation-delay: 1s;
+  scale: 0.82;
 }
 
-.leaves span:nth-child(5) {
+.sakura span:nth-child(5) {
   left: 65%;
   animation-duration: 15s;
   animation-delay: 5s;
 }
 
-.leaves span:nth-child(6) {
+.sakura span:nth-child(6) {
   left: 80%;
   animation-duration: 17s;
   animation-delay: 3s;
+  scale: 0.68;
 }
 
-.leaves span:nth-child(7) {
+.sakura span:nth-child(7) {
   left: 15%;
   animation-duration: 19s;
   animation-delay: 7s;
+  scale: 1.18;
 }
 
-.leaves span:nth-child(8) {
+.sakura span:nth-child(8) {
   left: 45%;
   animation-duration: 13s;
   animation-delay: 6s;
+  scale: 0.78;
 }
 
-.leaves span:nth-child(9) {
+.sakura span:nth-child(9) {
   left: 70%;
   animation-duration: 21s;
   animation-delay: 4s;
 }
 
-.leaves span:nth-child(10) {
+.sakura span:nth-child(10) {
   left: 90%;
   animation-duration: 15s;
   animation-delay: 8s;
+  scale: 0.9;
 }
 
 /* STORY SECTION */
@@ -659,7 +715,7 @@ button:disabled {
 
   min-height: 90vh;
 
-  background: #F8F3ED;
+  background: var(--peach-mist);
 
   display: flex;
   justify-content: center;
@@ -748,7 +804,7 @@ button:disabled {
 
   min-height: 90vh;
 
-  background: #F8F3ED;
+  background: var(--peach-mist);
 
   display: flex;
   justify-content: center;
@@ -919,6 +975,129 @@ button:disabled {
   line-height: 1.6;
 }
 
+/* PASTEL PEACH AND BLUSH THEME */
+
+.story-section {
+  background: linear-gradient(
+    145deg,
+    var(--peach-mist),
+    var(--blush-mist)
+  );
+}
+
+.photo-section {
+  background: var(--warm-white);
+}
+
+.gift-section {
+  background: linear-gradient(
+    160deg,
+    var(--blush-mist),
+    var(--peach-mist)
+  );
+}
+
+.rsvp-section {
+  background: linear-gradient(
+    145deg,
+    var(--peach-mist),
+    #F9DDE4
+  );
+}
+
+.event-section {
+  background:
+    linear-gradient(
+      rgba(91,43,57,0.3),
+      rgba(95,45,60,0.5)
+    ),
+    url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1400&auto=format&fit=crop');
+
+  background-size: cover;
+  background-position: center;
+}
+
+.event-card {
+  background: rgba(97,48,61,0.24);
+  border-color: rgba(255,220,228,0.28);
+}
+
+.event-card .section-label {
+  color: #FFDCE4;
+}
+
+.event-button {
+  background: rgba(255,224,230,0.2);
+}
+
+.event-button:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: rgba(255,224,230,0.3);
+}
+
+.section-label,
+.gift-card span {
+  color: var(--rose);
+}
+
+.story-section h2,
+.photo-section h2,
+.gift-content,
+.rsvp-card,
+.invalid-invite-card,
+.portrait-photo figcaption,
+.gift-card strong,
+.rsvp-choice span,
+.rsvp-card select,
+.rsvp-card textarea {
+  color: var(--plum);
+}
+
+.story-text,
+.family-photo span,
+.gift-copy,
+.gift-card p,
+.invalid-invite-card p,
+.rsvp-copy,
+.rsvp-card label,
+.rsvp-choice-group legend,
+.rsvp-message {
+  color: var(--muted-plum);
+}
+
+.family-photo strong {
+  color: var(--rose-dark);
+}
+
+.couple-carousel {
+  background: var(--blush-mist);
+}
+
+.gift-card {
+  border-color: rgba(158,82,102,0.18);
+  background: rgba(255,251,249,0.72);
+}
+
+.rsvp-choice-group,
+.rsvp-card select,
+.rsvp-card textarea {
+  border-color: rgba(158,82,102,0.22);
+}
+
+.rsvp-card select,
+.rsvp-card textarea {
+  background: rgba(255,251,249,0.88);
+}
+
+.rsvp-choice input {
+  accent-color: var(--rose-dark);
+}
+
+.rsvp-card select:focus,
+.rsvp-card textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 4px rgba(201,111,131,0.16);
+}
+
 /* ANIMATIONS */
 
 @keyframes fadeUp {
@@ -934,7 +1113,7 @@ button:disabled {
   }
 }
 
-@keyframes floatLeaf {
+@keyframes fallSakura {
 
   0% {
 
@@ -954,16 +1133,16 @@ button:disabled {
 
     transform:
       translateY(50vh)
-      translateX(60px)
-      rotate(180deg);
+      translateX(72px)
+      rotate(240deg);
   }
 
   100% {
 
     transform:
       translateY(120vh)
-      translateX(-80px)
-      rotate(360deg);
+      translateX(-65px)
+      rotate(540deg);
 
     opacity: 0;
   }
@@ -1043,6 +1222,10 @@ button:disabled {
 
   .carousel-slide {
     transition: none;
+  }
+
+  .sakura {
+    display: none;
   }
 }
 
