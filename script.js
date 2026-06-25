@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const guestName = document.getElementById("guestName");
   const coupleName = document.getElementById("coupleName");
   const heroTagline = document.getElementById("heroTagline");
-  const scrollIndicator = document.getElementById("scrollIndicator");
-
   const music = document.getElementById("bgMusic");
 
   const rsvpForm =
@@ -412,8 +410,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "Silakan hubungi keluarga pengundang untuk mendapatkan tautan yang benar.";
 
     button.hidden = true;
-    scrollIndicator.hidden = true;
-
     rsvpForm.hidden = true;
     invalidInviteCard.hidden = false;
   }
@@ -429,8 +425,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "Kepada Yth:";
 
     button.hidden = false;
-    scrollIndicator.hidden = false;
-
     rsvpForm.hidden = false;
     invalidInviteCard.hidden = true;
   }

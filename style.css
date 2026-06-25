@@ -1378,8 +1378,7 @@ button:disabled {
 
 .invalid-invite #coupleName,
 .invalid-invite .hero-eyebrow,
-.invalid-invite #openBtn,
-.invalid-invite #scrollIndicator {
+.invalid-invite #openBtn {
 
   display: none;
 }
