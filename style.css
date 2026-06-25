@@ -442,7 +442,9 @@ button:disabled {
 
   display: block;
 
-  object-fit: cover;
+  background: rgba(255,240,232,0.72);
+
+  object-fit: contain;
 }
 
 .carousel-control {
