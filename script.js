@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyCVouSyNva17C_ca16nx2rJp3FQBM64LQSgGpMhrbLoZIZ2MXCNbhbFk6V_IUPlcdH/exec";
 
   const EVENT_DETAILS = {
-    title: "Kevin & Mariska Church Blessing",
-    dateText: "Saturday, 17 July 2027",
-    timeText: "10:00 AM - 11:30 AM",
+    title: "Pemberkatan Nikah Kevin & Mariska",
+    dateText: "Sabtu, 17 Juli 2027",
+    timeText: "10.00 - 11.30 WIB",
     venue: "Gereja Mahasiswa Bandung",
     address: "Jln Sultan Agung No.4, Bandung, Indonesia",
     startsAt: "2027-07-17T10:00:00+07:00",
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.invitationOpened = false;
 
   button.disabled = true;
-  button.innerText = "Loading Invitation";
+  button.innerText = "Memuat Undangan";
 
   function applyEventDetails() {
 
@@ -138,8 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
       countdownMinutes.innerText = "00";
       countdownMessage.innerText =
         now <= eventEnd
-          ? "Today is the day. The church blessing is underway."
-          : "Thank you for celebrating this special day with us.";
+          ? "Hari ini adalah hari pemberkatan nikah kami."
+          : "Terima kasih telah merayakan hari istimewa ini bersama kami.";
 
       return;
     }
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       String(minutes).padStart(2, "0");
 
     countdownMessage.innerText =
-      "Until we celebrate together in Bandung";
+      "Menuju hari bahagia kami di Bandung";
   }
 
   function formatCalendarWallTime(value) {
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `DTEND;TZID=${EVENT_DETAILS.timeZone}:${formatCalendarWallTime(EVENT_DETAILS.endsAt)}`,
       `SUMMARY:${EVENT_DETAILS.title}`,
       `LOCATION:${EVENT_DETAILS.venue}, ${EVENT_DETAILS.address}`,
-      "DESCRIPTION:Church blessing begins at 10:00 AM Bandung time (WIB).",
+      "DESCRIPTION:Pemberkatan nikah dimulai pukul 10.00 WIB di Bandung.",
       "END:VEVENT",
       "END:VCALENDAR"
     ].join("\r\n");
@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
     guestSelect.setAttribute("aria-invalid", "true");
 
     rsvpMessage.innerText =
-      "Please choose the number of guests attending.";
+      "Mohon pilih jumlah tamu yang akan hadir.";
 
     guestSelect.focus();
   }
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
     attendanceGroup.classList.add("field-error");
 
     rsvpMessage.innerText =
-      "Please choose whether you will attend or are unable to attend.";
+      "Mohon pilih apakah Anda akan hadir atau tidak dapat hadir.";
 
     attendanceGroup.scrollIntoView({ behavior: "smooth", block: "center" });
   }
@@ -405,11 +405,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("invalid-invite");
 
     guestName.innerText =
-      "Invitation link not recognized";
+      "Tautan undangan tidak dikenal";
 
     coupleName.hidden = true;
     heroTagline.innerText =
-      "Please contact the host for the correct invitation link.";
+      "Silakan hubungi keluarga pengundang untuk mendapatkan tautan yang benar.";
 
     button.hidden = true;
     scrollIndicator.hidden = true;
@@ -426,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     coupleName.hidden = false;
     heroTagline.innerText =
-      "Together with love, family, and cherished friends";
+      "Dengan penuh kasih, kami mengundang Bapak/Ibu/Saudara/i untuk hadir";
 
     button.hidden = false;
     scrollIndicator.hidden = false;
@@ -457,7 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       script.onerror = () => {
 
-        reject(new Error("Unable to load RSVP record."));
+        reject(new Error("Data RSVP tidak dapat dimuat."));
         script.remove();
         delete window[callbackName];
       };
@@ -478,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     rsvpMessage.innerText =
-      "Checking for your previous RSVP...";
+      "Memeriksa RSVP Anda sebelumnya...";
 
     try {
 
@@ -502,7 +502,7 @@ document.addEventListener("DOMContentLoaded", () => {
         response.rsvp.notes || "";
 
       rsvpMessage.innerText =
-        "Your previous RSVP is shown below. Submit again to update it.";
+        "RSVP Anda sebelumnya ditampilkan di bawah ini. Kirim kembali untuk memperbarui.";
 
     } catch (error) {
 
@@ -517,7 +517,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function buildGuestOptions(maxGuests = 5) {
 
     guestSelect.innerHTML =
-      `<option value="">Select Number of Guests</option>`;
+      `<option value="">Pilih Jumlah Tamu</option>`;
 
     for (let i = 1; i <= maxGuests; i++) {
 
@@ -527,7 +527,7 @@ document.addEventListener("DOMContentLoaded", () => {
       option.value = i;
 
       option.textContent =
-        `${i} Guest${i > 1 ? 's' : ''}`;
+        `${i} Tamu`;
 
       guestSelect.appendChild(option);
     }
@@ -566,7 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showValidInvite();
 
         guestName.innerText =
-          `Dear ${guestData.name}`;
+          `Kepada Yth. ${guestData.name}`;
 
         guestKeyInput.value = currentGuestKey;
         guestDisplayNameInput.value = currentGuestName;
@@ -587,7 +587,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } finally {
 
       button.disabled = false;
-      button.innerText = "Open Invitation";
+      button.innerText = "Buka Undangan";
     }
 
   }
@@ -644,7 +644,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Autoplay prevented:", error);
     });
 
-    button.innerText = "Welcome";
+    button.innerText = "Selamat Datang";
 
   });
 
@@ -691,7 +691,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isValidGuest) {
 
       rsvpMessage.innerText =
-        "This invitation link is not recognized. Please contact the host.";
+        "Tautan undangan ini tidak dikenal. Silakan hubungi keluarga pengundang.";
 
       return;
     }
@@ -725,13 +725,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!RSVP_ENDPOINT) {
 
       rsvpMessage.innerText =
-        "RSVP form is ready. Add your Google Apps Script URL in script.js to start collecting responses.";
+        "Form RSVP sudah siap. Tambahkan URL Google Apps Script di script.js untuk mulai mengumpulkan jawaban.";
 
       return;
     }
 
     rsvpMessage.innerText =
-      "Submitting your RSVP...";
+      "Mengirim RSVP Anda...";
 
     const formData =
       new FormData(rsvpForm);
@@ -755,12 +755,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (submittedGuestCount === "0") {
 
         rsvpMessage.innerText =
-          "Thank you! Your RSVP has been updated as unable to attend.";
+          "Terima kasih. RSVP Anda telah diperbarui sebagai tidak dapat hadir.";
 
       } else {
 
         rsvpMessage.innerText =
-          `Thank you! RSVP updated for ${submittedGuestCount} guest${submittedGuestCount > 1 ? 's' : ''}.`;
+          `Terima kasih. RSVP diperbarui untuk ${submittedGuestCount} tamu.`;
       }
 
     } catch (error) {
@@ -768,7 +768,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("RSVP submission failed:", error);
 
       rsvpMessage.innerText =
-        "Sorry, your RSVP could not be submitted. Please try again.";
+        "Maaf, RSVP Anda belum dapat dikirim. Silakan coba lagi.";
     }
 
   });
