@@ -426,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     coupleName.hidden = false;
     heroTagline.innerText =
-      "Dengan penuh kasih, kami mengundang Bapak/Ibu/Saudara/i untuk hadir";
+      "Kepada Yth:";
 
     button.hidden = false;
     scrollIndicator.hidden = false;
@@ -566,7 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showValidInvite();
 
         guestName.innerText =
-          `Kepada Yth. ${guestData.name}`;
+          guestData.name;
 
         guestKeyInput.value = currentGuestKey;
         guestDisplayNameInput.value = currentGuestName;

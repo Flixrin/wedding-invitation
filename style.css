@@ -83,18 +83,34 @@ body {
 
 /* TEXT */
 
+.hero-eyebrow {
+
+  color: #8E4B58;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+
+  margin-bottom: 22px;
+}
+
 .guest-text {
 
-  letter-spacing: 3px;
+  color: #8E4B58;
 
-  font-size: 0.95rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-style: italic;
 
-  margin-bottom: 20px;
+  margin: 4px 0 34px;
 
-  opacity: 0.9;
+  opacity: 1;
 }
 
 h1 {
+
+  color: #8E4B58;
 
   font-family: 'Cormorant Garamond', serif;
 
@@ -102,7 +118,7 @@ h1 {
 
   line-height: 1;
 
-  margin-bottom: 25px;
+  margin-bottom: 34px;
 
   font-weight: 600;
 }
@@ -113,11 +129,17 @@ h1 span {
 
 .tagline {
 
-  line-height: 1.8;
+  color: #8E4B58;
 
-  margin-bottom: 38px;
+  line-height: 1.5;
 
-  opacity: 0.9;
+  margin-bottom: 0;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  opacity: 1;
 }
 
 /* BUTTON */
@@ -1353,6 +1375,7 @@ button:disabled {
 }
 
 .invalid-invite #coupleName,
+.invalid-invite .hero-eyebrow,
 .invalid-invite #openBtn,
 .invalid-invite #scrollIndicator {
 
