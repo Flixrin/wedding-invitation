@@ -534,6 +534,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+  function normalizeGuestKey(value) {
+
+    return (value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[.,;:!?]+$/, "");
+  }
+
   /* =========================
      Guest Database
   ========================= */
@@ -554,7 +562,7 @@ document.addEventListener("DOMContentLoaded", () => {
         new URLSearchParams(window.location.search);
 
       const guestKey =
-        params.get("guest");
+        normalizeGuestKey(params.get("guest"));
 
       if (guestKey && guests[guestKey]) {
 
