@@ -269,7 +269,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const isActive =
         slideIndex === activeCarouselSlide;
 
+      const isPrevious =
+        slideIndex === (activeCarouselSlide - 1 + carouselSlides.length) % carouselSlides.length;
+
+      const isNext =
+        slideIndex === (activeCarouselSlide + 1) % carouselSlides.length;
+
       slide.classList.toggle("is-active", isActive);
+      slide.classList.toggle("is-prev", isPrevious);
+      slide.classList.toggle("is-next", isNext);
       carouselDots[slideIndex].classList.toggle("is-active", isActive);
       carouselDots[slideIndex].setAttribute(
         "aria-current",
@@ -320,7 +328,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   carousel.addEventListener("focusout", startCarousel);
 
+  showCarouselSlide(0);
   startCarousel();
+
+  document.querySelectorAll(".copy-button").forEach((copyButton) => {
+
+    copyButton.addEventListener("click", async () => {
+
+      const copyValue =
+        copyButton.dataset.copy || "";
+
+      try {
+
+        await navigator.clipboard.writeText(copyValue);
+        copyButton.innerText = "Copied";
+
+        window.setTimeout(() => {
+          copyButton.innerText = "Copy";
+        }, 1800);
+
+      } catch (error) {
+
+        console.log("Copy failed:", error);
+        copyButton.innerText = copyValue;
+      }
+    });
+  });
 
   function showGuestCountError() {
 
@@ -365,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
     attendanceGroup.classList.add("field-error");
 
     rsvpMessage.innerText =
-      "Mohon pilih apakah Anda akan hadir atau tidak dapat hadir.";
+      "Mohon pilih apakah Anda akan hadir, masih ragu, atau tidak dapat hadir.";
 
     attendanceGroup.scrollIntoView({ behavior: "smooth", block: "center" });
   }
@@ -490,7 +523,10 @@ document.addEventListener("DOMContentLoaded", () => {
       guestSelect.value =
         response.rsvp.guestCount;
 
-      setAttendanceStatus(response.rsvp.guestCount === "0" ? "unable" : "attending");
+      setAttendanceStatus(
+        response.rsvp.attendanceStatus ||
+        (response.rsvp.guestCount === "0" ? "unable" : "attending")
+      );
 
       guestNotes.value =
         response.rsvp.notes || "";
@@ -719,7 +755,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const submittedGuestCount =
-      attendanceStatus === "unable" ? "0" : selectedGuests;
+      attendanceStatus === "attending" ? selectedGuests : "0";
 
     clearAttendanceError();
     clearGuestCountError();
@@ -757,7 +793,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (submittedGuestCount === "0") {
 
         rsvpMessage.innerText =
-          "Terima kasih. RSVP Anda telah diperbarui sebagai tidak dapat hadir.";
+          attendanceStatus === "unsure"
+            ? "Terima kasih. RSVP Anda telah diperbarui sebagai masih ragu."
+            : "Terima kasih. RSVP Anda telah diperbarui sebagai tidak dapat hadir.";
 
       } else {
 

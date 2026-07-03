@@ -6,7 +6,8 @@ const HEADERS = [
   "Guest Key",
   "Guest Name",
   "Guest Count",
-  "Notes"
+  "Notes",
+  "Attendance Status"
 ];
 
 function doGet(event) {
@@ -47,7 +48,8 @@ function doPost(event) {
     data.guestKey || "",
     data.guestName || "",
     data.guestCount || "",
-    data.notes || ""
+    data.notes || "",
+    data.attendanceStatus || ""
   ];
 
   const existingRow =
@@ -96,7 +98,8 @@ function getRsvp(guestKey) {
       guestKey: values[2] || "",
       guestName: values[3] || "",
       guestCount: String(values[4] || ""),
-      notes: values[5] || ""
+      notes: values[5] || "",
+      attendanceStatus: values[6] || ""
     }
   };
 }
@@ -113,6 +116,21 @@ function getSheet() {
 function ensureHeaders(sheet) {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
+    return;
+  }
+
+  const currentHeaders =
+    sheet
+      .getRange(1, 1, 1, HEADERS.length)
+      .getValues()[0];
+
+  const needsHeaderUpdate =
+    HEADERS.some((header, index) => currentHeaders[index] !== header);
+
+  if (needsHeaderUpdate) {
+    sheet
+      .getRange(1, 1, 1, HEADERS.length)
+      .setValues([HEADERS]);
   }
 }
 

@@ -1178,6 +1178,562 @@ button:disabled {
   box-shadow: 0 0 0 4px rgba(201,111,131,0.16);
 }
 
+/* SISTER STYLE DIRECTION */
+
+body {
+  background: #FDEDF4;
+}
+
+.story-section,
+.photo-section,
+.profile-section,
+.gift-section {
+  min-height: 100vh;
+  background: #FDEDF4;
+}
+
+.story-section {
+  padding: 110px 30px;
+}
+
+.story-content {
+  max-width: 560px;
+}
+
+.opening-greeting {
+  color: #2D1F22;
+  font-size: 1.6rem;
+  margin-bottom: 34px;
+}
+
+.story-text {
+  color: #6E1823;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.opening-couple {
+  color: #A54A57;
+  font-size: 3.6rem;
+  line-height: 1.05;
+  margin: 74px 0 54px;
+}
+
+.opening-couple span {
+  display: block;
+  color: #A54A57;
+}
+
+.opening-countdown {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.opening-countdown .countdown-unit {
+  border-color: rgba(165,74,87,0.2);
+  background: rgba(255,251,249,0.62);
+}
+
+.opening-countdown .countdown-unit strong,
+.opening-countdown .countdown-unit span,
+.story-section .countdown-message {
+  color: #9E1B23;
+}
+
+.calendar-button {
+  width: min(100%, 310px);
+  margin-top: 46px;
+  background: linear-gradient(135deg, #8E2731, #B95468);
+}
+
+.photo-section {
+  overflow: hidden;
+  padding: 100px 0 110px;
+}
+
+.photo-content {
+  max-width: none;
+}
+
+.photo-section .section-label {
+  display: none;
+}
+
+.photo-section h2 {
+  color: #A40008;
+  font-size: 3.4rem;
+  margin-bottom: 76px;
+}
+
+.couple-carousel {
+  width: min(100vw, 1440px);
+  height: min(64vh, 700px);
+  min-height: 440px;
+  margin: 0 auto;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
+}
+
+.carousel-slide {
+  inset: auto;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: min(30vw, 420px);
+  min-width: 300px;
+  max-width: 460px;
+  aspect-ratio: 4 / 5;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.78);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+
+.carousel-slide.is-active {
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.carousel-slide.is-prev {
+  z-index: 1;
+  opacity: 0.95;
+  transform: translateX(calc(-50% - min(33vw, 500px))) scale(0.86);
+}
+
+.carousel-slide.is-next {
+  z-index: 1;
+  opacity: 0.95;
+  transform: translateX(calc(-50% + min(33vw, 500px))) scale(0.86);
+}
+
+.carousel-slide img {
+  background: transparent;
+  object-fit: contain;
+}
+
+.carousel-control {
+  top: 52%;
+  background: rgba(255,255,255,0.8);
+  color: #2F2426;
+  border-color: rgba(165,74,87,0.2);
+}
+
+.carousel-previous {
+  left: calc(50% - min(18vw, 250px));
+}
+
+.carousel-next {
+  right: calc(50% - min(18vw, 250px));
+}
+
+.carousel-dots {
+  bottom: -34px;
+}
+
+.carousel-dot {
+  background: rgba(165,74,87,0.28);
+  border-color: rgba(165,74,87,0.42);
+}
+
+.carousel-dot.is-active {
+  background: #A54A57;
+}
+
+.profile-section {
+  display: grid;
+  place-items: center;
+  padding: 110px 24px;
+  text-align: center;
+}
+
+.profile-card {
+  width: min(100%, 620px);
+}
+
+.profile-frame {
+  position: relative;
+  width: min(78vw, 460px);
+  aspect-ratio: 1;
+  margin: 0 auto 58px;
+}
+
+.profile-photo {
+  position: absolute;
+  inset: 20% 16% 19% 24%;
+  width: 58%;
+  height: 58%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-ornament {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.profile-card h2 {
+  color: #6E1823;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.55rem;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.profile-card p {
+  color: #6E1823;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.event-section {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+    url('assets/images/design/church-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 48px 24px;
+}
+
+.event-card {
+  width: min(100%, 530px);
+  max-width: 530px;
+  padding: 58px 40px 48px;
+  border-radius: 0;
+  background: rgba(237,203,158,0.58);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: none;
+}
+
+.event-card h2 {
+  color: #6F4512;
+  font-size: 3.1rem;
+  line-height: 1.16;
+  letter-spacing: 8px;
+}
+
+.event-details {
+  padding: 26px 28px;
+  background:
+    linear-gradient(rgba(58,35,45,0.45), rgba(58,35,45,0.45)),
+    url('assets/images/hero-watercolor-lake.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+}
+
+.event-details p {
+  border-top-color: rgba(255,255,255,0.18);
+}
+
+.event-details span {
+  color: rgba(255,255,255,0.75);
+}
+
+.event-details strong {
+  color: #FFFFFF;
+  font-size: 1.35rem;
+}
+
+.event-actions {
+  grid-template-columns: 1fr;
+}
+
+.event-button {
+  background: rgba(255,214,224,0.42);
+}
+
+.gift-section {
+  padding: 86px 24px 96px;
+}
+
+.gift-content {
+  max-width: 560px;
+}
+
+.gift-section .section-label {
+  color: #8B5C6A;
+  font-size: 1.15rem;
+  letter-spacing: 7px;
+}
+
+.gift-section h2 {
+  display: none;
+}
+
+.gift-copy {
+  color: #672A36;
+  font-size: 1.35rem;
+  letter-spacing: 4px;
+}
+
+.gift-grid {
+  grid-template-columns: 1fr;
+  gap: 26px;
+  margin-top: 76px;
+}
+
+.gift-card {
+  position: relative;
+  min-height: 190px;
+  padding: 78px 32px 28px;
+  border-color: rgba(165,74,87,0.15);
+  background: rgba(255,251,249,0.68);
+  box-shadow: 0 0 0 8px rgba(255,246,239,0.55);
+}
+
+.gift-card::before {
+  content: "BCA";
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  color: #1B63A4;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+.gift-card span {
+  color: #8B7A78;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.gift-card strong {
+  display: none;
+}
+
+.gift-card p {
+  color: #4B3E41;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+.gift-card .account-number {
+  color: #3C3134;
+  font-size: 1.45rem;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.copy-button {
+  position: absolute;
+  right: 32px;
+  bottom: 64px;
+  min-height: 0;
+  padding: 9px 18px;
+  border-radius: 8px;
+  background: #6F765E;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+}
+
+.rsvp-section {
+  padding: 0 24px;
+  background: #FDEDF4;
+}
+
+.rsvp-card,
+.invalid-invite-card {
+  max-width: 610px;
+  padding: 72px 48px 60px;
+  background: rgba(255,226,223,0.7);
+}
+
+.rsvp-card .section-label {
+  color: #9B6C78;
+  letter-spacing: 8px;
+}
+
+.rsvp-card h2,
+.invalid-invite-card h2 {
+  color: #3E3338;
+  font-size: 4rem;
+  line-height: 1.15;
+}
+
+.rsvp-copy {
+  color: #6A6064;
+  font-size: 1.35rem;
+}
+
+.rsvp-choice-group {
+  border-color: rgba(121,85,92,0.18);
+  background: rgba(255,245,244,0.2);
+  padding: 26px;
+}
+
+.rsvp-choice {
+  font-size: 1.25rem;
+}
+
+.rsvp-card label {
+  color: #5B474E;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+}
+
+.rsvp-card textarea {
+  min-height: 160px;
+}
+
+.rsvp-card button[type="submit"] {
+  min-height: 74px;
+  background: linear-gradient(135deg, #AE4963, #D06C86);
+  font-size: 1.2rem;
+}
+
+@media(max-width: 768px) {
+
+  .story-section,
+  .photo-section,
+  .profile-section,
+  .event-section,
+  .gift-section,
+  .rsvp-section {
+    min-height: auto;
+  }
+
+  .story-section {
+    padding: 86px 22px;
+  }
+
+  .story-text {
+    font-size: 1.35rem;
+  }
+
+  .opening-couple {
+    font-size: 3rem;
+    margin: 52px 0 42px;
+  }
+
+  .calendar-button {
+    margin-top: 34px;
+  }
+
+  .photo-section {
+    padding: 76px 0 86px;
+  }
+
+  .photo-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 42px;
+  }
+
+  .couple-carousel {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    inset: 0;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 100%;
+    aspect-ratio: auto;
+    transform: none;
+  }
+
+  .carousel-slide.is-active {
+    transform: none;
+  }
+
+  .carousel-slide.is-prev,
+  .carousel-slide.is-next {
+    opacity: 0;
+    transform: none;
+  }
+
+  .carousel-previous {
+    left: 14px;
+  }
+
+  .carousel-next {
+    right: 14px;
+  }
+
+  .carousel-dots {
+    bottom: 14px;
+  }
+
+  .profile-section {
+    padding: 80px 22px;
+  }
+
+  .profile-frame {
+    width: min(92vw, 390px);
+    margin-bottom: 42px;
+  }
+
+  .profile-card h2 {
+    font-size: 2rem;
+  }
+
+  .profile-card p {
+    font-size: 1.45rem;
+  }
+
+  .event-section {
+    padding: 34px 18px;
+  }
+
+  .event-card {
+    padding: 44px 22px 36px;
+  }
+
+  .event-card h2 {
+    font-size: 2.35rem;
+    letter-spacing: 5px;
+  }
+
+  .event-details {
+    padding: 22px 18px;
+  }
+
+  .gift-copy {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .gift-card {
+    padding: 76px 22px 26px;
+  }
+
+  .copy-button {
+    right: 22px;
+  }
+
+  .rsvp-section {
+    padding: 0 18px 42px;
+  }
+
+  .rsvp-card,
+  .invalid-invite-card {
+    padding: 56px 22px 48px;
+  }
+
+  .rsvp-card h2,
+  .invalid-invite-card h2 {
+    font-size: 2.8rem;
+  }
+}
+
 /* ANIMATIONS */
 
 @keyframes fadeUp {

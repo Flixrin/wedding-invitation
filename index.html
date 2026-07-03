@@ -17,7 +17,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=20260625-hero-format">
+  <link rel="stylesheet" href="style.css?v=20260703-sister-style">
 
 </head>
 
@@ -73,21 +73,45 @@
 
         <div class="story-content">
 
-            <p class="section-label">
-                KISAH KAMI
-            </p>
-
-            <h2>
-                Dua hati,<br>
-                satu perjalanan indah.
+            <h2 class="opening-greeting">
+                Salam hangat
             </h2>
 
             <p class="story-text">
-                Dengan kehangatan, sukacita,
-                dan kenangan yang berharga,
-                kami mengundang Anda untuk merayakan
-                awal perjalanan kami bersama.
+                Dengan penuh rasa syukur dan bahagia,
+                kami mengundang Bapak/Ibu/Saudara/i
+                untuk menghadiri dan memberikan doa
+                restu pada momen istimewa kami.
             </p>
+
+            <h2 class="opening-couple">
+                Kevin
+                <span>&</span>
+                Mariska
+            </h2>
+
+            <div class="event-countdown opening-countdown" id="eventCountdown" aria-label="Hitung mundur menuju pemberkatan nikah">
+                <div class="countdown-unit">
+                    <strong id="countdownDays">000</strong>
+                    <span>Hari</span>
+                </div>
+
+                <div class="countdown-unit">
+                    <strong id="countdownHours">00</strong>
+                    <span>Jam</span>
+                </div>
+
+                <div class="countdown-unit">
+                    <strong id="countdownMinutes">00</strong>
+                    <span>Menit</span>
+                </div>
+            </div>
+
+            <p class="countdown-message" id="countdownMessage" aria-live="polite"></p>
+
+            <button type="button" class="event-button calendar-button" id="calendarBtn">
+                Simpan di Kalender
+            </button>
 
         </div>
 
@@ -99,11 +123,11 @@
         <div class="photo-content">
 
             <p class="section-label">
-                MOMEN KAMI
+                OUR GALLERY
             </p>
 
             <h2>
-                Sekilas kebersamaan kami
+                Our Gallery
             </h2>
 
             <div class="couple-carousel" id="coupleCarousel" aria-label="Carousel foto Kevin dan Mariska">
@@ -138,40 +162,46 @@
 
             </div>
 
-            <div class="family-gallery">
+        </div>
 
-                <div class="family-row">
-                    <figure class="portrait-photo">
-                        <img src="assets/images/gallery/kevin.webp" alt="Kevin" loading="lazy">
-                        <figcaption>Kevin</figcaption>
-                    </figure>
+    </section>
 
-                    <figure class="family-photo">
-                        <img src="assets/images/gallery/kevin-family.webp" alt="Kevin bersama keluarga" loading="lazy">
-                        <figcaption>
-                            <strong>Apt. Kevin, S.Farm.</strong>
-                            <span>Bersama keluarga terkasih</span>
-                        </figcaption>
-                    </figure>
-                </div>
+    <!-- PROFILE GROOM SECTION -->
+    <section class="profile-section profile-groom hidden-section">
 
-                <div class="family-row">
-                    <figure class="portrait-photo">
-                        <img src="assets/images/gallery/mariska.webp" alt="Mariska" loading="lazy">
-                        <figcaption>Mariska</figcaption>
-                    </figure>
+        <div class="profile-card">
+            <figure class="profile-frame">
+                <img class="profile-photo" src="assets/images/gallery/kevin.webp" alt="Kevin" loading="lazy">
+                <img class="profile-ornament" src="assets/images/design/profile-frame.png" alt="" aria-hidden="true" loading="lazy">
+            </figure>
 
-                    <figure class="family-photo">
-                        <img src="assets/images/gallery/mariska-family.webp" alt="Mariska bersama keluarga" loading="lazy">
-                        <figcaption>
-                            <strong>Apt. Mariska Yovianto, S.Farm.</strong>
-                            <span>Bersama keluarga terkasih</span>
-                        </figcaption>
-                    </figure>
-                </div>
+            <h2>Apt. Kevin, S. Farm</h2>
 
-            </div>
+            <p>
+                putra dari<br>
+                Bapak Sandy Liong &<br>
+                Ibu Lily Listyawati
+            </p>
+        </div>
 
+    </section>
+
+    <!-- PROFILE BRIDE SECTION -->
+    <section class="profile-section profile-bride hidden-section">
+
+        <div class="profile-card">
+            <figure class="profile-frame">
+                <img class="profile-photo" src="assets/images/gallery/mariska.webp" alt="Mariska" loading="lazy">
+                <img class="profile-ornament" src="assets/images/design/profile-frame.png" alt="" aria-hidden="true" loading="lazy">
+            </figure>
+
+            <h2>Apt. Mariska Yovianto, S. Farm</h2>
+
+            <p>
+                putri dari<br>
+                Bapak Derry Yovianto &<br>
+                Ibu Mimi Vincentia Yovianto
+            </p>
         </div>
 
     </section>
@@ -181,32 +211,10 @@
 
         <div class="event-card">
 
-            <p class="section-label">
-                HARI PERNIKAHAN
-            </p>
-
             <h2>
-                Pemberkatan Nikah
+                Pemberkatan<br>
+                Pernikahan
             </h2>
-
-            <div class="event-countdown" id="eventCountdown" aria-label="Hitung mundur menuju pemberkatan nikah">
-                <div class="countdown-unit">
-                    <strong id="countdownDays">000</strong>
-                    <span>Hari</span>
-                </div>
-
-                <div class="countdown-unit">
-                    <strong id="countdownHours">00</strong>
-                    <span>Jam</span>
-                </div>
-
-                <div class="countdown-unit">
-                    <strong id="countdownMinutes">00</strong>
-                    <span>Menit</span>
-                </div>
-            </div>
-
-            <p class="countdown-message" id="countdownMessage" aria-live="polite"></p>
 
             <div class="event-details">
                 <p>
@@ -235,9 +243,6 @@
                     Buka Peta
                 </a>
 
-                <button type="button" class="event-button" id="calendarBtn">
-                    Tambah ke Kalender
-                </button>
             </div>
 
         </div>
@@ -250,12 +255,8 @@
         <div class="gift-content">
 
             <p class="section-label">
-                TANDA KASIH
+                WEDDING GIFT
             </p>
-
-            <h2>
-                Dengan kasih dan syukur
-            </h2>
 
             <p class="gift-copy">
                 Kehadiran dan doa restu Anda merupakan hadiah terindah bagi kami. Bagi keluarga dan sahabat yang ingin mengirimkan tanda kasih, detail transfer akan dibagikan di sini.
@@ -264,17 +265,21 @@
             <div class="gift-grid">
 
                 <div class="gift-card">
-                    <span>Kevin</span>
-                    <strong>Nama Bank</strong>
-                    <p>Nomor Rekening</p>
-                    <p>Nama Pemilik Rekening</p>
+                    <strong>BCA</strong>
+                    <span>Nomor Rekening</span>
+                    <p class="account-number">7771768052</p>
+                    <span>Nama Pemilik</span>
+                    <p>Kevin</p>
+                    <button type="button" class="copy-button" data-copy="7771768052">Copy</button>
                 </div>
 
                 <div class="gift-card">
-                    <span>Mariska</span>
-                    <strong>Nama Bank</strong>
-                    <p>Nomor Rekening</p>
-                    <p>Nama Pemilik Rekening</p>
+                    <strong>BCA</strong>
+                    <span>Nomor Rekening</span>
+                    <p class="account-number">7940214151</p>
+                    <span>Nama Pemilik</span>
+                    <p>Mariska Yovianto</p>
+                    <button type="button" class="copy-button" data-copy="7940214151">Copy</button>
                 </div>
 
             </div>
@@ -330,6 +335,11 @@
                 </label>
 
                 <label class="rsvp-choice">
+                    <input type="radio" name="attendanceStatus" value="unsure">
+                    <span>Saya masih ragu</span>
+                </label>
+
+                <label class="rsvp-choice">
                     <input type="radio" name="attendanceStatus" value="unable">
                     <span>Tidak dapat hadir</span>
                 </label>
@@ -346,10 +356,10 @@
             </div>
 
             <label for="guestNotes">
-                Catatan
+                Ucapan untuk mempelai
             </label>
 
-            <textarea id="guestNotes" name="notes" rows="3" placeholder="Permintaan khusus atau pesan singkat"></textarea>
+            <textarea id="guestNotes" name="notes" rows="3" placeholder="Tulis ucapan..."></textarea>
 
             <button type="submit" id="rsvpBtn">
                 Kirim RSVP
@@ -365,7 +375,7 @@
         <source src="assets/music/theme.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="script.js?v=20260625-scroll-fix"></script>
+    <script src="script.js?v=20260703-sister-style"></script>
 
 </body>
 
