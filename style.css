@@ -1428,8 +1428,8 @@ body {
 .event-details {
   padding: 26px 28px;
   background:
-    linear-gradient(rgba(58,35,45,0.45), rgba(58,35,45,0.45)),
-    url('assets/images/hero-watercolor-lake.png');
+    linear-gradient(rgba(68,45,40,0.42), rgba(68,45,40,0.42)),
+    url('assets/images/design/church-bg.jpg');
   background-size: cover;
   background-position: center;
   border-radius: 0;
