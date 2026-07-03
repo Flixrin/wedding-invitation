@@ -1107,11 +1107,16 @@ button:disabled {
 }
 
 .event-button {
-  background: rgba(255,224,230,0.2);
+  background: linear-gradient(135deg, #7D2733, #B95468);
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  box-shadow: 0 10px 24px rgba(125,39,51,0.22);
 }
 
 .event-button:hover:not(:disabled):not([aria-disabled="true"]) {
-  background: rgba(255,224,230,0.3);
+  background: linear-gradient(135deg, #6E202B, #A8475B);
+  box-shadow: 0 12px 28px rgba(125,39,51,0.28);
 }
 
 .section-label,
@@ -1245,7 +1250,9 @@ body {
 .calendar-button {
   width: min(100%, 310px);
   margin-top: 46px;
-  background: linear-gradient(135deg, #8E2731, #B95468);
+  background: linear-gradient(135deg, #7D2733, #B95468);
+  color: #FFFFFF;
+  box-shadow: 0 10px 24px rgba(125,39,51,0.22);
 }
 
 .photo-section {
@@ -1453,7 +1460,8 @@ body {
 }
 
 .event-button {
-  background: rgba(255,214,224,0.42);
+  background: linear-gradient(135deg, #7D2733, #B95468);
+  color: #FFFFFF;
 }
 
 .gift-section {
