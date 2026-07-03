@@ -85,7 +85,7 @@ body {
 
 .hero-eyebrow {
 
-  color: #8E4B58;
+  color: #A40008;
 
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.45rem;
@@ -96,7 +96,7 @@ body {
 
 .guest-text {
 
-  color: #8E4B58;
+  color: #A40008;
 
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
@@ -110,7 +110,7 @@ body {
 
 h1 {
 
-  color: #8E4B58;
+  color: #A40008;
 
   font-family: 'Cormorant Garamond', serif;
 
@@ -124,12 +124,12 @@ h1 {
 }
 
 h1 span {
-  color: #F4B6C2;
+  color: #D68695;
 }
 
 .tagline {
 
-  color: #8E4B58;
+  color: #A40008;
 
   line-height: 1.5;
 
@@ -1433,25 +1433,44 @@ body {
 }
 
 .event-details {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 26px 28px;
-  background:
-    linear-gradient(rgba(68,45,40,0.42), rgba(68,45,40,0.42)),
-    url('assets/images/design/church-bg.jpg');
-  background-size: cover;
-  background-position: center;
+  background: rgba(71,48,38,0.58);
   border-radius: 0;
 }
 
+.event-details::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url('assets/images/design/church-bg.jpg') center / cover no-repeat;
+  opacity: 0.3;
+}
+
+.event-details::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    rgba(58,38,34,0.55),
+    rgba(58,38,34,0.55)
+  );
+}
+
 .event-details p {
-  border-top-color: rgba(255,255,255,0.18);
+  border-top-color: rgba(255,236,220,0.32);
 }
 
 .event-details span {
-  color: rgba(255,255,255,0.75);
+  color: #F8D8C8;
 }
 
 .event-details strong {
-  color: #FFFFFF;
+  color: #FFF8F2;
   font-size: 1.35rem;
 }
 
